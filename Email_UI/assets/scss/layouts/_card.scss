@@ -1,0 +1,44 @@
+.card {
+    width: 48%;
+    min-height: 336px;
+    /* Minimum yüksekliği belirtiyoruz */
+    border-radius: 16px;
+    background-color: $cardBG;
+    margin: 0 auto;
+    margin-top: $xxxl;
+    @include custom-box-shadow(0px, 46px, 4px, -20px, $shadow, 16px);
+
+    &-content {
+        float: left;
+        padding: 40px 50px;
+        @include flex(column, center, left, 20px);
+
+        &__inputs {
+            @include flex(row, left, center, 10px);
+        }
+    }
+
+    /* 600px'den küçük ekranlar için stil */
+    @media (max-width: 750px) {
+        width: 90%;
+        /* Kartın genişliğini %90 yaparak daha dar hale getiriyoruz */
+        min-height: 300px;
+        /* Minimum yüksekliği otomatik yapıyoruz */
+        margin-top: $xl;
+        /* Kartın üst marjını değiştiriyoruz */
+        border-radius: 10px;
+        /* Kartın köşe yarıçapını küçültüyoruz */
+        @include custom-box-shadow(0px, 20px, 4px, -10px, $shadow, 8px);
+        /* Gölgeyi daha küçük bir boyuta getiriyoruz */
+
+        .card {
+            display: inline-block;
+            /* Kartı görünür hale getiriyoruz */
+        }
+
+        .card-content {
+            padding: 20px;
+            /* İçerik kutusunun dolgusunu azaltıyoruz */
+        }
+    }
+}

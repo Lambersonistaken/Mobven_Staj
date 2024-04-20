@@ -1,0 +1,15 @@
+.card-content__button {
+    width: 30%;
+    height: 60px;
+    background-color: $purple;
+    color: $white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 100;
+
+    @media (max-width: 600px) {
+        width: 100%;
+        /* Düğmenin genişliğini %100 yaparak tam ekran genişliği kadar genişlemesini sağlıyoruz */
+    }
+}

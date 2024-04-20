@@ -1,0 +1,11 @@
+@mixin custom-box-shadow($x, $y, $blur, $spread, $color, $radius) {
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow: $x $y $blur $spread $color;
+    box-shadow: $x $y $blur $spread $color;
+    border-radius: $radius;
+}
+
+// // Kullanımı:
+// .element {
+//     @include custom-box-shadow(0px, 46px, 4px, -20px, rgba(0, 0, 0, 0.75));
+// }

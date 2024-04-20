@@ -1,0 +1,147 @@
+@charset "UTF-8";
+.link {
+  color: white;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-content__button {
+  width: 30%;
+  height: 60px;
+  background-color: #9D50FF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 100;
+}
+@media (max-width: 600px) {
+  .card-content__button {
+    width: 100%;
+    /* Düğmenin genişliğini %100 yaparak tam ekran genişliği kadar genişlemesini sağlıyoruz */
+  }
+}
+
+.card-content__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.card-content__title.small {
+  font-size: 12px;
+  font-weight: 700;
+}
+.card-content__title.big {
+  font-size: 22px;
+  font-weight: 700;
+}
+.card-content__title.medium {
+  font-size: 16px;
+}
+.card-content__title.light {
+  font-weight: lighter;
+}
+.card-content__title.dark {
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  .card-content__title.small {
+    font-size: 10px;
+    /* Küçük başlık için yazı boyutunu küçültüyoruz */
+  }
+  .card-content__title.big {
+    font-size: 18px;
+    /* Büyük başlık için yazı boyutunu küçültüyoruz */
+  }
+  .card-content__title.medium {
+    font-size: 14px;
+    /* Orta boyutlu başlık için yazı boyutunu küçültüyoruz */
+  }
+}
+
+.card-content__mail {
+  background-color: #47518B;
+  border: 3px solid #747DB0;
+  height: 60px;
+  width: 70%;
+  color: #FFFFFF;
+  padding: 10px;
+}
+.card-content__mail::-moz-placeholder {
+  color: #FFFFFF;
+}
+.card-content__mail::placeholder {
+  color: #FFFFFF;
+}
+.card-content__mail:focus {
+  border: 3px solid #747DB0;
+}
+@media (max-width: 600px) {
+  .card-content__mail {
+    width: 100%;
+    /* Giriş kutusunun genişliğini %100 yaparak tam ekran genişliği kadar genişlemesini sağlıyoruz */
+  }
+}
+
+.card {
+  width: 48%;
+  min-height: 336px;
+  /* Minimum yüksekliği belirtiyoruz */
+  border-radius: 16px;
+  background-color: #47518B;
+  margin: 0 auto;
+  margin-top: 120px;
+  box-shadow: 0px 46px 4px -20px #222B5C;
+  border-radius: 16px;
+  /* 600px'den küçük ekranlar için stil */
+}
+.card-content {
+  float: left;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 20px;
+}
+.card-content__inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 750px) {
+  .card {
+    width: 90%;
+    /* Kartın genişliğini %90 yaparak daha dar hale getiriyoruz */
+    min-height: 300px;
+    /* Minimum yüksekliği otomatik yapıyoruz */
+    margin-top: 40px;
+    /* Kartın üst marjını değiştiriyoruz */
+    border-radius: 10px;
+    /* Kartın köşe yarıçapını küçültüyoruz */
+    box-shadow: 0px 20px 4px -10px #222B5C;
+    border-radius: 8px;
+    /* Gölgeyi daha küçük bir boyuta getiriyoruz */
+  }
+  .card .card {
+    display: inline-block;
+    /* Kartı görünür hale getiriyoruz */
+  }
+  .card .card-content {
+    padding: 20px;
+    /* İçerik kutusunun dolgusunu azaltıyoruz */
+  }
+}
+
+.bg {
+  background-color: #2E3769;
+}/*# sourceMappingURL=main.css.map */
