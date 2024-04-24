@@ -7,6 +7,6 @@ Link :https://www.uidesigndaily.com/posts/figma-job-cards-list-card-day-1524
 
 # Link
 
-Link :
+Link : https://mobven-staj-first-homework.vercel.app/
 
 
