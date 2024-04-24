@@ -1,41 +1,25 @@
-.section {
-    @include grid(3, 32px); // 3 sütun, 32px gap
-    justify-items: center;
+.position {
+    &-list {
+        width: 1054px;
+        border-radius: 16px;
+        font-family: $first-font;
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
 
-    &-content {
+    &-item {
         @include flex(column, center, center);
         gap: 32px;
-
-
-        &__card {
-            background-color: $white;
-            width: 300px;
-            height: 220px;
-            border-radius: 16px;
-            font-family: $first-font;
-        }
-
-        &__logo {
-            width: 64px;
-            height: 64px;
-            color: $darkBlue;
-            border: none;
-            border-radius: 14px;
-        }
-
-    }
-
-    &-reverse {
-        @include flex(row, center, center);
-        gap: 32px;
+        border-radius: 16px;
+        padding: 40px;
         background-color: $white;
+        box-shadow: 1px 18px 50px 1px #ced5eb;
     }
 
+    &-header {
+        @include flex(row, space-between, center);
+        gap: 30px;
 
-}
-
-@media only screen and (max-width: 620px) {
-    .section {
-        @include grid(1, 32px);
     }
 }

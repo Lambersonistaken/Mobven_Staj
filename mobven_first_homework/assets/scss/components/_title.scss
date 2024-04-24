@@ -20,8 +20,9 @@
         background-color: $white;
     }
 
-    &.xl {
+    &.-xl {
         font-size: 32px;
+        margin-bottom: $xxl;
     }
 
     &.center {
