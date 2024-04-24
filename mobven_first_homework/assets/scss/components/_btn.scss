@@ -1,0 +1,33 @@
+.btn {
+    height: 60px;
+    width: 250px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid $grey;
+    background-color: $white;
+    color: $darkBlue;
+    font-family: $first-font;
+    cursor: pointer;
+
+
+    &.darkBlue {
+        background-color: $darkBlue;
+        color: $white;
+
+        &:hover {
+            background-color: $white;
+            color: $darkBlue;
+            transition: 5ms;
+
+
+        }
+    }
+
+    &:hover {
+        background-color: $darkBlue;
+        color: $white;
+        transition: 5ms;
+    }
+
+
+}

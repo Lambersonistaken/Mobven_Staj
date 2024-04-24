@@ -1,0 +1,40 @@
+.section-content__logo {
+    width: 64px;
+    height: 64px;
+    color: $darkBlue;
+    border: none;
+    border-radius: 14px;
+
+
+
+    &.linearPurple {
+        background-image: $linearPurple;
+
+    }
+
+    &.linearPink {
+        background-image: $linearPink;
+
+    }
+
+    &.linearBlue {
+        background-image: $linearBlue;
+
+    }
+
+    &.linearTurquoise {
+        background-image: $linearTurquoise;
+
+    }
+
+    &.linearOrangish {
+        background-image: $linearOrangish;
+
+    }
+
+    &.linearOrange {
+        background-image: $linearOrange;
+
+    }
+
+}

@@ -1,0 +1,41 @@
+.section {
+    @include grid(3, 32px); // 3 sütun, 32px gap
+    justify-items: center;
+
+    &-content {
+        @include flex(column, center, center);
+        gap: 32px;
+
+
+        &__card {
+            background-color: $white;
+            width: 300px;
+            height: 220px;
+            border-radius: 16px;
+            font-family: $first-font;
+        }
+
+        &__logo {
+            width: 64px;
+            height: 64px;
+            color: $darkBlue;
+            border: none;
+            border-radius: 14px;
+        }
+
+    }
+
+    &-reverse {
+        @include flex(row, center, center);
+        gap: 32px;
+        background-color: $white;
+    }
+
+
+}
+
+@media only screen and (max-width: 620px) {
+    .section {
+        @include grid(1, 32px);
+    }
+}

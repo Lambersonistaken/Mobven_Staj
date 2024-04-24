@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  height: 60px;
+  width: 250px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid #C2C5E2;
+  background-color: #FFFFFF;
+  color: #1E2246;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.btn.darkBlue {
+  background-color: #1E2246;
+  color: #FFFFFF;
+}
+.btn.darkBlue:hover {
+  background-color: #FFFFFF;
+  color: #1E2246;
+  transition: 5ms;
+}
+.btn:hover {
+  background-color: #1E2246;
+  color: #FFFFFF;
+  transition: 5ms;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Merriweather", serif;
+  color: #1E2246;
+}
+.title.sm {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+.title.md {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  background-color: #FFFFFF;
+}
+.title.xl {
+  font-size: 32px;
+}
+.title.center {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 120px;
+}
+
+.card {
+  background-color: #FFFFFF;
+  width: 300px;
+  height: 220px;
+  border-radius: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-content__logo {
+  width: 64px;
+  height: 64px;
+  color: #1E2246;
+  border: none;
+  border-radius: 14px;
+}
+.section-content__logo.linearPurple {
+  background-image: linear-gradient(90deg, #BBCBFB 0%, #F1D4FF 100%);
+}
+.section-content__logo.linearPink {
+  background-image: linear-gradient(90deg, #FBBBDA 0%, #FFD4D4 100%);
+}
+.section-content__logo.linearBlue {
+  background-image: linear-gradient(90deg, #BBEBFB 0%, #EFD4FF 100%);
+}
+.section-content__logo.linearTurquoise {
+  background-image: linear-gradient(90deg, #BBFBE4 0%, #D4E0FF 100%);
+}
+.section-content__logo.linearOrangish {
+  background-image: linear-gradient(90deg, #BBD8FB 0%, #FFD4D4 100%);
+}
+.section-content__logo.linearOrange {
+  background-image: linear-gradient(90deg, #FFDEC7 0%, #D4D9FF 100%);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  justify-items: center;
+}
+.section-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.section-content__card {
+  background-color: #FFFFFF;
+  width: 300px;
+  height: 220px;
+  border-radius: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.section-content__logo {
+  width: 64px;
+  height: 64px;
+  color: #1E2246;
+  border: none;
+  border-radius: 14px;
+}
+.section-reverse {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width: 620px) {
+  .section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.title-container {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.bg {
+  background-color: #F3F6FF;
+}/*# sourceMappingURL=main.css.map */

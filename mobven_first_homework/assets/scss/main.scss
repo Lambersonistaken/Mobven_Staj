@@ -1,0 +1,24 @@
+@import "./base/";
+@import "./mixin";
+@import "./abstracts";
+@import "./components";
+@import "./layouts";
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: $xxl;
+}
+
+
+.title-container {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: $xxl;
+}
+
+.bg {
+    background-color: $lightPurple;
+}
