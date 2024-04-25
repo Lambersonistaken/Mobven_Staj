@@ -1,0 +1,26 @@
+.loginCard__button {
+    width: 410px;
+    height: 75px;
+    border-radius: 4px;
+    background-color: $bgColor;
+    color: $darkBlue;
+    font-family: $firstFont;
+    border: 1px solid $lightPurple;
+    font-size: 18px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    box-sizing: border-box;
+    @include flex(row, nowrap, center, center);
+
+    &.dark {
+        background-color: $darkBlue;
+        color: $white;
+    }
+
+
+    &__image {
+        width: 24px;
+        height: 24px;
+        margin-right: 16px;
+    }
+}

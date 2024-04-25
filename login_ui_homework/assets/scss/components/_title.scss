@@ -1,0 +1,27 @@
+.loginCard__title {
+    font-family: $firstFont;
+    font-size: 24px;
+    font-weight: 700;
+    color: $darkBlue;
+    text-align: center;
+
+
+    &.small {
+        font-size: 18px;
+        opacity: 0.6;
+
+    }
+
+    &.large {
+        font-family: $secondFont;
+        font-size: 32px;
+    }
+
+    &.medium {
+        font-size: 18px;
+    }
+
+    &.light {
+        font-weight: 400;
+    }
+}

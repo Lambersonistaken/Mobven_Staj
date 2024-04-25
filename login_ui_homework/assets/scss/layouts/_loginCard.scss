@@ -1,0 +1,23 @@
+.loginCard {
+    width: 554px;
+    height: 864px;
+    border-radius: 12px;
+    background-color: $white;
+    padding: 72px;
+    @include flex(column, nowrap, space-evenly, center);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+    &__footer {
+        @include flex(row, nowrap, center, center);
+
+
+        &__point {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $darkBlue;
+            margin: 0 8px;
+        }
+    }
+
+}
