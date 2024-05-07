@@ -1,0 +1,17 @@
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 60px;
+  font-family: "Arial", sans-serif;
+}
+
+.card {
+  border: 5px solid #ccc;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+}
