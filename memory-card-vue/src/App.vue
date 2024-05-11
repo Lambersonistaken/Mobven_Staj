@@ -1,6 +1,7 @@
 <script>
 import Card from './components/Card.vue'
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
+import _ from 'lodash'
 export default {
   name: 'App',
   components: {
@@ -9,22 +10,81 @@ export default {
   setup () {
     const cardList = ref([])
     const userSelection = ref([])
-    const status = ref('')
+    const status = computed(() => {
+     if(remainingPairs.value === 0){
+      return "You Win!"
+     }
+      else {
+        return "Keep Playing, You have " + remainingPairs.value + " pairs left to match."
+      }
+    })
 
-    for (let i = 0; i <16; i++) {
-      cardList.value.push({
-        value: 10,
-        visible: false,
-        position: i
-      
+
+    const remainingPairs = computed(() => {
+      const remainingCards = cardList.value.filter(card => card.matched === false)
+
+      return remainingCards.length / 2
+    })
+
+    const shuffleCards = () => {
+      cardList.value = _.shuffle(cardList.value) // lodash kullanarak shuffle işlemi yaptık.
+    }
+
+
+    const restartGame = () => {
+      shuffleCards()
+
+      cardList.value = cardList.value.map((card,index) => {
+        return {
+          ...card,
+          visible: false,
+          matched: false,
+          position: index
+        }
       })
     }
+
+    const cardItems = [1,2,3,4,5,6,7,8]
+
+
+    cardItems.forEach( item => {
+      cardList.value.push({
+        value: item,
+        visible: false,
+        position: null,
+        matched: false
+      })
+      cardList.value.push({
+        value: item,
+        visible: false,
+        position: null,
+        matched: false
+      })
+    })
+
+    cardList.value = cardList.value.map((card,index) => {
+      return {
+        ...card,
+        position: index
+      }
+    })
+
+    
 
     const flipCard = payload => {
       cardList.value[payload.position].visible = !cardList.value[payload.position].visible
 
       if(userSelection.value[0]) {
-        userSelection.value[1] = payload
+        if(
+          userSelection.value[0].position === payload.position
+          && userSelection.value[0].faceValue === payload.faceValue
+        ) {
+          return
+        }
+        else {
+          userSelection.value[1] = payload
+        }
+        
       }
       else {
         userSelection.value[0] = payload
@@ -37,11 +97,14 @@ export default {
         const cardTwo = currentValue[1]
 
         if(cardOne.faceValue === cardTwo.faceValue) {
-          status.value = 'Match Found'
+          
+          cardList.value[cardOne.position].matched = true
+          cardList.value[cardTwo.position].matched = true
         } else {
-          status.value = 'No Match Found'
-          cardList.value[cardOne.position].visible = false
-          cardList.value[cardTwo.position].visible = false
+          setTimeout(() => {
+            cardList.value[cardOne.position].visible = false
+            cardList.value[cardTwo.position].visible = false
+          }, 1000)
         }
 
         
@@ -54,7 +117,9 @@ export default {
       cardList,
       flipCard,
       userSelection,
-      status
+      status,
+      shuffleCards,
+      restartGame
     }
   }
 }
@@ -63,9 +128,10 @@ export default {
 <template>
   <h1>Memory Card</h1>
   <section class="game-board">
-  <Card v-for="(card,index) in cardList" :key="`card-${index}`" :value="card.value" :visible="card.visible" @select-card="flipCard" :position="card.position"/>
+  <Card v-for="(card,index) in cardList" :key="`card-${index}`" :value="card.value" :matched="card.matched" :visible="card.visible" @select-card="flipCard" :position="card.position"/>
   </section>
   <h2>{{status}}</h2>
+  <button @click="restartGame">RESTART</button>
 </template>
 
 <style scoped>
