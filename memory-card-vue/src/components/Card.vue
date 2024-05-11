@@ -1,7 +1,7 @@
 <template>
   <div class="card" @click="selectCard">
     <div v-if="visible" class="card-face is-front">
-      {{ value }} - {{ position }} - {{  matched }}
+      <img :src="`/images/${value}.png`" :alt="value">
     </div>
     <div v-else class="card-face is-back">
       Back
@@ -21,7 +21,7 @@
                 required: true
             },
             value: {
-                type: Number,
+                type: String,
                 required: true
             },
             visible: {
@@ -46,7 +46,7 @@
 
 <style lang="css" scoped>
 .card {
-  border: 5px solid #ccc;
+  
   position: relative;
 }
 
@@ -54,14 +54,33 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 4px;
+  border: 2px solid #000000fd;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .card-face.is-front {
-  background-color: red;
+  background-color: #f81559  ;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card-face.is-back {
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b7bf5;
   color: white;
 }
 </style>

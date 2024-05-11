@@ -44,7 +44,7 @@ export default {
       })
     }
 
-    const cardItems = [1,2,3,4,5,6,7,8]
+    const cardItems = ["celtics","dallas","denver","ers","lakers","miami","knicks","golden"]
 
 
     cardItems.forEach( item => {
@@ -135,16 +135,6 @@ export default {
 </template>
 
 <style scoped>
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
 
 .game-board {
   margin: 0 auto;
