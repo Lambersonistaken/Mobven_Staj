@@ -26,13 +26,11 @@ export default {
       return remainingCards.length / 2
     })
 
-    const shuffleCards = () => {
-      cardList.value = _.shuffle(cardList.value) // lodash kullanarak shuffle işlemi yaptık.
-    }
+   
 
 
     const restartGame = () => {
-      shuffleCards()
+      cardList.value = _.shuffle(cardList.value) // lodash kullanarak shuffle işlemi yaptık.
 
       cardList.value = cardList.value.map((card,index) => {
         return {
@@ -50,12 +48,14 @@ export default {
     cardItems.forEach( item => {
       cardList.value.push({
         value: item,
+        variant:1,
         visible: false,
         position: null,
         matched: false
       })
       cardList.value.push({
         value: item,
+        variant:2,
         visible: false,
         position: null,
         matched: false
@@ -118,7 +118,6 @@ export default {
       flipCard,
       userSelection,
       status,
-      shuffleCards,
       restartGame
     }
   }
@@ -127,9 +126,9 @@ export default {
 
 <template>
   <h1>Memory Card</h1>
-  <section class="game-board">
-  <Card v-for="(card,index) in cardList" :key="`card-${index}`" :value="card.value" :matched="card.matched" :visible="card.visible" @select-card="flipCard" :position="card.position"/>
-  </section>
+  <transition-group class="game-board" tag="section" name="shuffle-card">
+  <Card v-for="(card) in cardList" :key="`${card.value}-${card.variant}`" :value="card.value" :matched="card.matched" :visible="card.visible" @select-card="flipCard" :position="card.position"/>
+  </transition-group>
   <h2>{{status}}</h2>
   <button @click="restartGame">RESTART</button>
 </template>
@@ -144,6 +143,10 @@ export default {
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   grid-template-rows: 100px 100px 100px 100px;
+}
+
+.shuffle-card-move {
+  transition: transform 0.8s ease-in;
 }
 
 </style>
